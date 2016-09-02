@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
@@ -694,12 +694,38 @@
                                     <action selector="mkDir:" target="XfG-lQ-9wD" id="Fca-gW-bMt"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iRa-Pq-4wT">
+                                <rect key="frame" x="18" y="208" width="200" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="cp select /AkkeyLab/sample.png" id="Mo4-HS-Bff">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBu-iw-FM3">
+                                <rect key="frame" x="218" y="199" width="81" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="hrk-ir-rQa"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="実行" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="CLg-pH-5P3">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cp:" target="XfG-lQ-9wD" id="hNH-5h-qzt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="fBu-iw-FM3" firstAttribute="leading" secondItem="iRa-Pq-4wT" secondAttribute="trailing" constant="8" id="9KQ-ne-xtY"/>
+                            <constraint firstItem="iRa-Pq-4wT" firstAttribute="top" secondItem="DjU-7N-WX4" secondAttribute="bottom" constant="8" id="Hla-QO-uje"/>
                             <constraint firstItem="Vgz-Mu-p9J" firstAttribute="leading" secondItem="DjU-7N-WX4" secondAttribute="trailing" constant="8" id="OhL-fy-01n"/>
                             <constraint firstItem="Vgz-Mu-p9J" firstAttribute="leading" secondItem="DjU-7N-WX4" secondAttribute="trailing" constant="8" id="PCJ-ua-JeZ"/>
                             <constraint firstItem="DjU-7N-WX4" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Rha-4v-CgS"/>
                             <constraint firstItem="Vgz-Mu-p9J" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="18" id="Zwg-TO-gxB"/>
+                            <constraint firstItem="fBu-iw-FM3" firstAttribute="top" secondItem="Vgz-Mu-p9J" secondAttribute="bottom" constant="4" id="jUy-WA-Tda"/>
+                            <constraint firstItem="fBu-iw-FM3" firstAttribute="leading" secondItem="iRa-Pq-4wT" secondAttribute="trailing" constant="8" id="oZK-hb-i4E"/>
+                            <constraint firstItem="iRa-Pq-4wT" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="pp5-vv-Vjw"/>
                             <constraint firstItem="DjU-7N-WX4" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="weu-uO-cI7"/>
                         </constraints>
                     </view>
