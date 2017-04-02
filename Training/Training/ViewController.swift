@@ -9,9 +9,9 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    private let task = NSTask()
-    private let alert = NSAlert()
-    private var homeDir: String!
+    fileprivate let task = Process()
+    fileprivate let alert = NSAlert()
+    fileprivate var homeDir: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ class ViewController: NSViewController {
         homeDir = NSHomeDirectory()
     }
 
-    @IBAction func mkDir(sender: AnyObject) {
+    @IBAction func mkDir(_ sender: AnyObject) {
 //        let outputDir: String = homeDir + "/Desktop/AkkeyLab"
         let outputDir: String = homeDir + "/AkkeyLab"
         NSLog("\(outputDir)")
@@ -31,21 +31,21 @@ class ViewController: NSViewController {
         task.launch()
     }
 
-    @IBAction func cp(sender: AnyObject) {
+    @IBAction func cp(_ sender: AnyObject) {
         let panel = NSOpenPanel()
         // ファイル選択を許可させる
         panel.canChooseFiles = true
         panel.canChooseDirectories = false
         panel.allowsMultipleSelection = false
         panel.allowedFileTypes = NSImage.imageTypes()
-        panel.beginWithCompletionHandler({ (num) -> Void in
+        panel.begin(completionHandler: { (num) -> Void in
             if num == NSModalResponseOK {
-                self.readItem((panel.URL?.path)!)
+                self.readItem((panel.url?.path)!)
             }
         })
     }
 
-    func readItem(url: String) {
+    func readItem(_ url: String) {
         if (NSImage(contentsOfFile: url) != nil) {
             task.launchPath = "/bin/cp"
             task.arguments = [url, homeDir + "/AkkeyLab/sample.png"]
@@ -58,7 +58,7 @@ class ViewController: NSViewController {
         }
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.
         }
