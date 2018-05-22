@@ -37,9 +37,9 @@ class ViewController: NSViewController {
         panel.canChooseFiles = true
         panel.canChooseDirectories = false
         panel.allowsMultipleSelection = false
-        panel.allowedFileTypes = NSImage.imageTypes()
+        panel.allowedFileTypes = NSImage.imageTypes
         panel.begin(completionHandler: { (num) -> Void in
-            if num == NSModalResponseOK {
+            if num == NSApplication.ModalResponse.OK {
                 self.readItem((panel.url?.path)!)
             }
         })
